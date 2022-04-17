@@ -130,7 +130,7 @@ public class DispatchService {
         // checking loaded medication items for a given drone
         List<LoadedDrone> loadedDrone = loadedDroneRepository.findBySerialNumber(serialNumber);
         if (loadedDrone.isEmpty())
-            return ResponseEntity.ok(new ApiResponse(false, "Drone not found", 101, serialNumber));
+            return ResponseEntity.ok(new ApiResponse(false, "Drone not loaded or not found", 101, serialNumber));
 
 
         // get medication details
