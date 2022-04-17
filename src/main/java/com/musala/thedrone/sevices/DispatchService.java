@@ -125,4 +125,22 @@ public class DispatchService {
 
         return ResponseEntity.ok(new ApiResponse(true, "Drone Loaded Successful", 100, drone));
     }
+
+    public ResponseEntity<?> checkMedication(String serialNumber) {
+        // checking loaded medication items for a given drone
+        List<LoadedDrone> loadedDrone = loadedDroneRepository.findBySerialNumber(serialNumber);
+        if (loadedDrone.isEmpty())
+            return ResponseEntity.ok(new ApiResponse(false, "Drone not found", 101, serialNumber));
+
+
+        // get medication details
+        List<Medication> medications = new ArrayList<>();
+        for (LoadedDrone loadedDrone1 : loadedDrone) {
+            Optional<Medication> medication = medicationRepository.findByCode(loadedDrone1.getMedicationCode());
+            if (medication.isPresent())
+                medications.add(medication.get());
+        }
+
+        return ResponseEntity.ok(new ApiResponse(true, "Successful", 100, medications));
+    }
 }

@@ -33,6 +33,11 @@ public class DispatchController {
         return dispatchService.loadDrone(loadDroneRequest);
     }
 
+    @GetMapping("/drone/medication/{serialNumber}")
+    public ResponseEntity<?> checkMedication(@PathVariable String serialNumber) {
+        return dispatchService.checkMedication(serialNumber);
+    }
+
 
 
 }
