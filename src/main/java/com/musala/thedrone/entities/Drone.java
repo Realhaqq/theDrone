@@ -1,6 +1,6 @@
 package com.musala.thedrone.entities;
 
-import com.musala.thedrone.enums.BatteryCapacity;
+import com.musala.thedrone.enums.DroneState;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,11 +19,11 @@ public class Drone {
     @Column(nullable = false, length = 100)
     private String model;
     @Column(nullable = false, length = 22)
-    private int weightLimit;
-    @Column(precision = 5, scale = 4)
+    private BigDecimal weightLimit;
+    @Column(nullable = false, length = 22)
     private BigDecimal batteryCapacity;
     @Enumerated(EnumType.STRING)
-    private BatteryCapacity state;
+    private DroneState state;
 
 
     @Column(updatable = false)
