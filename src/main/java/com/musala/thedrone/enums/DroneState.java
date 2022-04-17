@@ -1,6 +1,6 @@
 package com.musala.thedrone.enums;
 
-public enum BatteryCapacity {
+public enum DroneState {
     IDLE,
     LOADING,
     LOADED,
