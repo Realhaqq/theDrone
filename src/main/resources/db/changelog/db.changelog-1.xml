@@ -1,4 +1,17 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+  <changeSet id="4" author="samiu" context="DEFAULT">
+        <sql>
+            INSERT INTO medication (name, image, weight, code, created_at) VALUES ('phentermine systemic', 'https://pics.clipartpng.com/midle/Red_and_White_Pills_Capsules_PNG_Clipart-3286.png', '1', "ME-PH", NOW());
+            INSERT INTO medication (name, image, weight, code, created_at) VALUES ('liraglutide systemic', 'https://pics.clipartpng.com/midle/Red_and_White_Pills_Capsules_PNG_Clipart-3286.png', '20', "ME-LI", NOW());
+            INSERT INTO medication (name, image, weight, code, created_at) VALUES ('megestrol systemic', 'https://pics.clipartpng.com/midle/Red_and_White_Pills_Capsules_PNG_Clipart-3286.png', '30', "ME-ME", NOW());
+            INSERT INTO medication (name, image, weight, code, created_at) VALUES ('topiramate systemic', 'https://pics.clipartpng.com/midle/Red_and_White_Pills_Capsules_PNG_Clipart-3286.png', '100', "ME-ME", NOW());
+            INSERT INTO medication (name, image, weight, code, created_at) VALUES ('naltrexone systemic', 'https://pics.clipartpng.com/midle/Red_and_White_Pills_Capsules_PNG_Clipart-3286.png', '200', "ME-NA", NOW());
+            INSERT INTO medication (name, image, weight, code, created_at) VALUES ('Saxenda systemic', 'https://pics.clipartpng.com/midle/Red_and_White_Pills_Capsules_PNG_Clipart-3286.png', '300', "ME-SA", NOW());
+            INSERT INTO medication (name, image, weight, code, created_at) VALUES ('Lomaira systemic', 'https://pics.clipartpng.com/midle/Red_and_White_Pills_Capsules_PNG_Clipart-3286.png', '400', "ME-LO", NOW());
+            INSERT INTO medication (name, image, weight, code, created_at) VALUES ('Atti-Plex P systemic', 'https://pics.clipartpng.com/midle/Red_and_White_Pills_Capsules_PNG_Clipart-3286.png', '500', "ME-AT", NOW());
+            INSERT INTO medication (name, image, weight, code, created_at) VALUES ('oxandrolone systemic', 'https://pics.clipartpng.com/midle/Red_and_White_Pills_Capsules_PNG_Clipart-3286.png', '600', "ME-OX", NOW());
 
+        </sql>
+    </changeSet>
 </databaseChangeLog>

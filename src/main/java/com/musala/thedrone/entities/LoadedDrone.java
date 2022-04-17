@@ -7,19 +7,15 @@ import java.util.Date;
 
 @Entity
 @Data
-public class Medication {
+public class LoadedDrone {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false, length = 100)
-    private String name;
+    private String serialNumber;
     @Column(nullable = false, length = 100)
-    private String weight;
-    @Column(nullable = false, length = 250)
-    private String image;
-    @Column(nullable = false, length = 25)
-    private String code;
+    private String medicationCode;
 
     @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
