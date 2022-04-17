@@ -1,14 +1,11 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
-  <changeSet id="11" author="samiu" context="DEFAULT">
+  <changeSet id="22" author="samiu" context="DEFAULT">
         <sql>
-            CREATE TABLE `drone` (
+            CREATE TABLE `loaded_drone` (
                                      `id` bigint(20) NOT NULL AUTO_INCREMENT,
-                                     `battery_capacity` decimal(5,2) NOT NULL,
-                                     `model` varchar(250) NOT NULL,
+                                     `medication_code` varchar(250) NOT NULL,
                                      `serial_number` varchar(250) NOT NULL,
-                                     `state` varchar(250) NOT NULL,
-                                     `weight_limit` decimal(5,2) NOT NULL,
                                      `created_at` timestamp DEFAULT CURRENT_TIMESTAMP(),
                                      `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
                                      PRIMARY KEY (`id`)

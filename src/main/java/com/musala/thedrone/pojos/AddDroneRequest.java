@@ -1,6 +1,5 @@
 package com.musala.thedrone.pojos;
 
-import com.musala.thedrone.enums.DroneState;
 import lombok.Data;
 
 import java.math.BigDecimal;
