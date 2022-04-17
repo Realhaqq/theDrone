@@ -44,4 +44,9 @@ public class DispatchService {
 
 
     }
+
+    public ResponseEntity<?> checkAvailableDrones() {
+        return ResponseEntity.ok(new ApiResponse(true, "Available Drones", 100, droneRepository.findAllByState(DroneState.IDLE)));
+
+    }
 }
