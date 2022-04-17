@@ -17,11 +17,14 @@ public class DispatchController {
         return dispatchService.addNewDrone(addDroneRequest);
     }
 
-
-    // checking available drones for loading
     @GetMapping("/drone/check")
     public ResponseEntity<?> checkAvailableDrones() {
         return dispatchService.checkAvailableDrones();
+    }
+
+    @GetMapping("/drone/batteryLevel/{serialNumber}")
+    public ResponseEntity<?> checkBatteryLevel(@PathVariable String serialNumber) {
+        return dispatchService.checkBatteryLevel(serialNumber);
     }
 
 }
