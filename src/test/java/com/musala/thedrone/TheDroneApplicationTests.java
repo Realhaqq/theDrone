@@ -56,6 +56,22 @@ class TheDroneApplicationTests {
         }
     }
 
+    // test fot all drone logs
+    @Test
+    public void testDroneLogs() {
+        String droneLogsUrl = baseUrl + "api/v1/drone/logs";
+
+        try {
+            ResponseEntity<String> result = restTemplate.getForEntity(droneLogsUrl, String.class);
+            assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
+            assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
+            assertThat(result.getBody()).contains("Successful");
+            assertThat(result.getBody()).contains("data").isNotEmpty();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // test for check drone battery level
     @Test
     public void testDroneBatteryLevel() {

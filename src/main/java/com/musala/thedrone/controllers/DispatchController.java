@@ -40,5 +40,11 @@ public class DispatchController {
     }
 
 
+    @GetMapping("/drone/logs")
+    public ResponseEntity<?> getDroneLogs() {
+        return dispatchService.getDroneLogs();
+    }
+
+
 
 }

@@ -1,6 +1,7 @@
 package com.musala.thedrone.sevices;
 
 import com.musala.thedrone.entities.Drone;
+import com.musala.thedrone.entities.DroneLog;
 import com.musala.thedrone.entities.LoadedDrone;
 import com.musala.thedrone.entities.Medication;
 import com.musala.thedrone.enums.DroneState;
@@ -8,6 +9,7 @@ import com.musala.thedrone.pojos.AddDroneRequest;
 import com.musala.thedrone.pojos.ApiResponse;
 import com.musala.thedrone.pojos.LoadDroneRequest;
 import com.musala.thedrone.pojos.MedicationItems;
+import com.musala.thedrone.repositories.DroneLogRepository;
 import com.musala.thedrone.repositories.DroneRepository;
 import com.musala.thedrone.repositories.LoadedDroneRepository;
 import com.musala.thedrone.repositories.MedicationRepository;
@@ -31,6 +33,9 @@ public class DispatchService {
 
     @Autowired
     LoadedDroneRepository loadedDroneRepository;
+
+    @Autowired
+    DroneLogRepository droneLogRepository;
 
     public ResponseEntity<?> addNewDrone(AddDroneRequest addDroneRequest) {
         if (addDroneRequest.getWeightLimit().compareTo(BigDecimal.valueOf(500)) > 0)
@@ -142,5 +147,10 @@ public class DispatchService {
         }
 
         return ResponseEntity.ok(new ApiResponse(true, "Successful", 100, medications));
+    }
+
+    public ResponseEntity<?> getDroneLogs() {
+        List<DroneLog> droneLogs = droneLogRepository.findAll();
+        return ResponseEntity.ok(new ApiResponse(true, "Successful", 100, droneLogs));
     }
 }
